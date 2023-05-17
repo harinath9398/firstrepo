@@ -1,10 +1,27 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
+                
                 echo 'Hello World'
+            }
+        }
+        stage('Test') {
+            steps {
+            
+                echo 'test is sucessfull'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                
+                 echo 'deploy is sucess'
+            }
+            post {
+                success {
+                    build job: 'Pipeline B', wait: true
+                }
             }
         }
     }
