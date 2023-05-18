@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage(load onther jenkinsfile){
-            steps {
-                load 'jenkinsfile1 '
-            }
-        }
-    }
-    stages {
         stage('Build') {
             steps {
                 
